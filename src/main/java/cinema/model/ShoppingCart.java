@@ -20,8 +20,8 @@ public class ShoppingCart {
             joinColumns = @JoinColumn(name = "shopping_cart_id"),
             inverseJoinColumns = @JoinColumn(name = "ticket_id"))
     private List<Ticket> tickets;
-    @OneToOne
     @MapsId
+    @OneToOne
     @JoinColumn(name = "id")
     private User user;
 
@@ -54,7 +54,6 @@ public class ShoppingCart {
         return "ShoppingCart{"
                 + "id=" + id
                 + ", tickets=" + tickets
-                + ", user=" + user
-                + '}';
+                + ", user=" + user + '}';
     }
 }
